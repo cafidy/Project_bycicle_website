@@ -1,44 +1,36 @@
-<div class="container">
-    <div class ="row gutters">
-        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-            <img src="<?php echo $racinepath.'assets/pedalshimano.png'; ?>" class="img-fluid p-4">
-            <div class="card-body p-4">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <h6>Brand: Shimano</h6>
-                        <h6>Price : 60</h6>
+<div class="container my-5">
+    <div class="row g-4">
+        <?php foreach($allparts as $part): ?>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                <div class="card h-100 shadow-sm border-0">
+                    <form action="<?= $racinepath . 'controls/item.php' ?>" method="POST">
+                        <input type="hidden" name="partid" value="<?= $part->partid ?>">
+                        <button name="item" class="border-0 bg-transparent w-100">
+                            <img src="<?= $racinepath ?>assets/<?= $part->img ?>" 
+                                 class="card-img-top p-3"
+                                 style="height:200px; object-fit:contain;">
+                        </button>
+                    </form>
+                    <div class="card-body text-center">
+                        <h5 class="fw-bold"><?= $part->name ?></h5>
+                        <p class="text-success fw-bold mb-1">
+                            <?= $part->price ?> €
+                        </p>
+                        <p class="text-muted small">
+                            Stock: <?= $part->stock ?>
+                        </p>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <h6>Part : Pedales</h6>
-                        <h6>Stock : 700</h6>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <button class="p-1 m-2"><i class="fa fa-shopping-cart"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-            <a href="<?php echo $racinepath.'controls/item.php' ?>"><img src="<?php echo $racinepath.'assets/groupeshimanoult.png'; ?>" class="img-fluid p-4"></a>
-            <div class="card-body p-4">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <h6>Brand: Shimano Ultegra</h6>
-                        <h6>Price : 249</h6>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <h6>Part : Group</h6>
-                        <h6>Stock : 3015</h6>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                        <button class="p-1 m-2"><i class="fa fa-shopping-cart"></i></button>
+                    <div class="card-footer bg-white border-0 text-center pb-3">
+                        <form action="<?= $racinepath.'controls/shop.php'; ?>" method="POST">
+                            <input type="hidden" name="partid" value="<?= $part->partid ?>">
+
+                            <button class="btn btn-primary w-75" name="addcart">
+                                <i class="fa fa-shopping-cart me-2"></i> Add to Cart
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </div>

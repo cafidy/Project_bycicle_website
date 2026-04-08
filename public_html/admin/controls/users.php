@@ -3,7 +3,7 @@
     $racinepath="../";
     include "../views/header.php";
     echo '<div class="container">';
-    echo '<div class="row gutters">';
+    echo '<div class="row ">';
     include "../views/menu.php";
     include "../views/users.php";
     echo '</div>';

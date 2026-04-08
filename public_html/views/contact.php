@@ -1,6 +1,6 @@
 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 justify-content-center item-align-center p-4 container-sm">
     <div class=" card">
-        <div class=" row gutters ">
+        <div class=" row  ">
             <form>
                 <h3><i>Contact form</i></h3>
                 <div class ="m-1">

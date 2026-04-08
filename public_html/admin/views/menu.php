@@ -9,8 +9,12 @@
                     <li class="nav-item">
                         <a href="../controls/users.php" class="nav-link">Users</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="../controls/addpart.php" class="nav-link">New part</a>
+                    </li>
                 </ul>
             </nav>
+            
         </div>
     </div>
 </div>

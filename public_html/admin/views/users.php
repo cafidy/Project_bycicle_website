@@ -1,7 +1,7 @@
 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
     <div class="card h-100">
         <div class="card-body">
-            <div class="row gutters m-1">
+            <div class="row  m-1">
                 <div class="card m-1">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-1">
 							<h5 class="mb-2 text-dark">User ID : 1</h6>
