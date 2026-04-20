@@ -16,7 +16,7 @@
                     <h6 class="text-success fw-bold"><?= $part->price ?> €</h6>
                 </div>
                 <div class="col-md-3 text-center p-3">
-                    <form action="<?= $racinepath.'controls/basket.php'; ?>" method="POST">
+                    <form action="basket" method="POST">
                         <input type="hidden" name="odrpart" value="<?= $order->id ?>">
                         <button class="btn btn-outline-danger w-100" name="takeoff">
                             <i class="fa-solid fa-trash me-2"></i> Remove
@@ -27,7 +27,7 @@
         </div>
     <?php endforeach; ?>
     <?php if(!empty($orders->getacorder())): ?>
-        <form action="<?= $racinepath.'controls/basket.php'; ?>" method="POST">
+        <form action="basket" method="POST">
             <input type="hidden" name="orderid" value="<?= $orders->getacorder()[0]->orderid ?>">
 
             <button class="btn btn-primary w-75" name="orderpart">

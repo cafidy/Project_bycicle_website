@@ -6,7 +6,7 @@
                     <h4>Créer un compte</h4>
                 </div>
                 <div class="card-body">
-                    <form action="<?php echo $racinepath.'controls/newaccount.php'; ?>" method="POST">
+                    <form action="newaccount" method="POST">
                         <div class="mb-3">
                             <label class="form-label">Email</label>
                             <input type="email" class="form-control" name="email" placeholder="example@gmail.com" required>

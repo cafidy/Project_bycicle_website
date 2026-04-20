@@ -5,9 +5,7 @@ spl_autoload_register(function ($classname) {
         __DIR__ . '/model/',
         __DIR__ . '/exceptions/'
     ];
-
-    $classname_short = str_replace(['Site\\Entity\\', 'Site\\Model\\','Site\\Catchers\\'], '', $classname);
-
+    $classname_short = str_replace(['Site\\Entity\\', 'Site\\Model\\', 'Site\\Catchers\\'], '', $classname);
     foreach ($dirs as $path) {
         $file = $path . $classname_short . '.php';
         if (file_exists($file)) {
@@ -16,4 +14,9 @@ spl_autoload_register(function ($classname) {
         }
     }
 });
+
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>

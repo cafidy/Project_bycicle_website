@@ -3,10 +3,10 @@
         <?php foreach($allparts as $part): ?>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="card h-100 shadow-sm border-0">
-                    <form action="<?= $racinepath . 'controls/item.php' ?>" method="POST">
+                    <form action="item" method="POST">
                         <input type="hidden" name="partid" value="<?= $part->partid ?>">
                         <button name="item" class="border-0 bg-transparent w-100">
-                            <img src="<?= $racinepath ?>assets/<?= $part->img ?>" 
+                            <img src="<?= $racinepath ?>assets/<?php "~uapv2401709/".$part->img ?>" 
                                  class="card-img-top p-3"
                                  style="height:200px; object-fit:contain;">
                         </button>
@@ -21,7 +21,7 @@
                         </p>
                     </div>
                     <div class="card-footer bg-white border-0 text-center pb-3">
-                        <form action="<?= $racinepath.'controls/shop.php'; ?>" method="POST">
+                        <form action="shop" method="POST">
                             <input type="hidden" name="partid" value="<?= $part->partid ?>">
 
                             <button class="btn btn-primary w-75" name="addcart">

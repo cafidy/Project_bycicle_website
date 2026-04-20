@@ -6,7 +6,7 @@
 					<div>
 						<div>
 							<h5>username</h5>
-							<h6><?= $acuser->name ?></h6>
+							<h6><?= $_SESSION["user"]->name ?></h6>
 						</div>
 						<div>
 							<h5>About</h5>
@@ -16,8 +16,8 @@
 				</div>
 			</div>
 		</div>
-			<form action="<?php echo $racinepath.'controls/account.php'; ?>" method="POST">
-				<input name="userid" type="hidden" value="<?= $acuser->userid ?>">
+			<form action="account" method="POST">
+				<input name="userid" type="hidden" value="<?= $_SESSION["user"]->userid ?>">
 				<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
 				<div class="card h-100">
 					<div class="card-body">
@@ -28,19 +28,19 @@
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
 									<label for="Name">Name</label>
-									<input name="name" type="text" class="form-control" id="Name" placeholder="Enter name" value="<?= $acuser->name ?>">
+									<input name="name" type="text" class="form-control" id="Name" placeholder="Enter name" value="<?= $_SESSION["user"]->name ?>">
 								</div>
 							</div>
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
 									<label for="phone">Phone</label>
-								<input name="phone" type="tel" class="form-control" id="phone" placeholder="Enter phone number" value=<?= $acuser->phone ?>>
+								<input name="phone" type="tel" class="form-control" id="phone" placeholder="Enter phone number" value=<?= $_SESSION["user"]->phone ?>>
 								</div>
 							</div>
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group">
 									<label for="email">Email</label>
-									<input name="email" type="text" class="form-control" id="email" placeholder="Enter email" value=<?= $acuser->email ?>>
+									<input name="email" type="text" class="form-control" id="email" placeholder="Enter email" value=<?= $_SESSION["user"]->email ?>>
 								</div>
 							</div>
 						</div>

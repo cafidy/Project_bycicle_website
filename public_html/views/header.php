@@ -8,20 +8,27 @@
 <header class="container-auto rounded m-5 align-items-center">
   <div class="px-3 py-2 bg-dark text-white rounded">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="<?php echo $racinepath ?>" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+        <a href="firstpage" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
         
           <h1><i>Peloton leader</i></h1>
-          <a href="<?php echo $racinepath.'controls/login.php'; ?>" class="btn btn-dark m-4">login</a>
+          <?php if(isset($_SESSION['user'])): ?>
+           <form method="POST" action="login">
+              <button class="btn btn-danger m-4" type="submit" name="disconect" action="login">disconnect</button>
+          </form>
+          <?php endif; ?>
+          <?php if(!isset($_SESSION['user'])): ?>
+          <a href="login" class="btn btn-dark m-4">login</a>
+          <?php endif; ?>
           <h5> <i>Numero 1° des vendeur de pièces de vélo</i></h>
         </a>
         
       </div>
       <div class="d-flex justify-content-between align-items-center w-100 px-3">
-        <a href="<?php echo $racinepath.'controls/shop.php'; ?>" class="btn btn-dark text-light text-decoration-none">
+        <a href="shop" class="btn btn-dark text-light text-decoration-none">
           Shop
         </a>
-        <a href="<?php echo $racinepath.'controls/basket.php'; ?>" class="btn btn-dark text-light d-flex align-items-center">
+        <a href="basket" class="btn btn-dark text-light d-flex align-items-center">
           <i class="fa fa-shopping-cart"></i>
         </a>
     </div>

@@ -28,14 +28,12 @@ $racinepath='../';
 $users= new UsersDB();
 if($_SERVER["REQUEST_METHOD"]=== "POST" && isset($_POST['update'])){
     if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['phone'])){
-        $users->updateuser($_POST['userid'],$_POST['name'],$_POST['email'],$_POST['phone']);
+        $users->updateuser($_SESSION["user"]->userid,$_POST['name'],$_POST['email'],$_POST['phone']);
     }
 }
 
-$users= new UsersDB();
-$acuser= $users->getuser(2);
 $ordertv = new OrderDB();
-$orders = new Order($acuser,$ordertv->getactualorder($acuser->userid),$ordertv->getpreviousorder($acuser->userid));
+$orders = new Order($_SESSION["user"],$ordertv->getactualorder($_SESSION["user"]->userid),$ordertv->getpreviousorder($_SESSION["user"]->userid));
 
 include "../views/header.php";
 include "../views/account.php";

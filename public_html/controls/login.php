@@ -24,7 +24,9 @@ $racinepath = '../';
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['login'])) {
     $actuser = $users->checklogin($_POST['email'], $_POST['password']);
     if (!empty($actuser)) {
-        include "account.php";
+        $_SESSION['user']=$actuser;
+        header('Location: /~uapv2401709/account');
+        exit();
     } else {
         $message = "Error: login or password incorrect";
         include "../views/header.php";
@@ -32,6 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['login'])) {
         include "../views/footer.php";
     }
 } else {
+    if (isset($_POST['disconect'])) {
+        session_destroy();
+        header('Location: /~uapv2401709/login');
+        exit();
+    }
     include "../views/header.php";
     include "../views/login.php";
     include "../views/footer.php";

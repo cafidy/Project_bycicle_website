@@ -6,7 +6,7 @@
                     <h4>Connexion</h4>
                 </div>
                 <div class="card-body">
-                    <form action="<?php echo $racinepath.'controls/login.php'; ?>" method="POST">
+                    <form action="login" method="POST">
                         <div class="mb-3">
                             <label class="form-label">Email</label>
                             <input type="email" class="form-control" name="email" placeholder="user@gmail.com" required>
@@ -23,7 +23,7 @@
                     </form>
                 </div>
                 <div class="card-footer text-center">
-                    <a href="<?php echo $racinepath.'controls/newaccount.php'; ?>" class="form-text text-muted">New to the site</a>
+                    <a href="newaccount" class="form-text text-muted">New to the site</a>
                 </div>
             </div>
         </div>
