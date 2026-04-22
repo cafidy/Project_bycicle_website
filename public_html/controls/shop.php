@@ -19,12 +19,23 @@ require_once '../autoloader.php';
 
 use Site\Model\PartsDB;
 use Site\Model\OrderDB;
+include "../cookies.php";
 
 $parts= new PartsDB();
 $orders = new OrderDB();
 $allparts = $parts->getallparts();
 if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['addcart'])){
-    $orders->addpartorder(2,$_POST['partid']);
+    if(isset($_SESSION['user'])){
+        $orders->addpartorder($_SESSION['user']->userid,$_POST['partid']);
+    }
+    else {
+        $cart = [];
+        if (isset($_COOKIE['basket'])) {
+            $cart = json_decode($_COOKIE['basket'], true);
+        }
+        $cart[] = $_POST['partid'];
+        setcookie("basket", json_encode($cart), time() + 3600 , "/");
+    }
 }
 $racinepath="../";
 include "../views/header.php";

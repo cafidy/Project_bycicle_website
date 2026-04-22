@@ -6,7 +6,7 @@
                     <form action="item" method="POST">
                         <input type="hidden" name="partid" value="<?= $part->partid ?>">
                         <button name="item" class="border-0 bg-transparent w-100">
-                            <img src="<?= $racinepath ?>assets/<?php "~uapv2401709/".$part->img ?>" 
+                            <img src="assets/<?=$part->img ?>" 
                                  class="card-img-top p-3"
                                  style="height:200px; object-fit:contain;">
                         </button>

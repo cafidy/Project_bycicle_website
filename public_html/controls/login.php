@@ -17,6 +17,7 @@ require_once '../autoloader.php';
  */
 
 use Site\Model\UsersDB;
+include "../cookies.php";
 
 $users = new UsersDB();
 $message = "";

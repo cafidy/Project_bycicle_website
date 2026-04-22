@@ -47,23 +47,41 @@ class UsersDB extends DB {
     }
 
     public function getuser($iduser){
-    try {
-        $stmt = $this->db->prepare("SELECT * FROM users WHERE userid = :iduser");
-        $stmt->execute([':iduser' => $iduser]);
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (!$row) {
-            throw new NotexistException("user with ID $iduser not exist");
+        try {
+            $stmt = $this->db->prepare("SELECT * FROM users WHERE userid = :iduser");
+            $stmt->execute([':iduser' => $iduser]);
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$row) {
+                throw new NotexistException("user with ID $iduser not exist");
+            }
+            return new User(
+                $row['userid'],
+                $row['name'],
+                $row['email'],
+                $row['phone']
+            );
+        } catch (PDOException $e) {
+            throw new DBException("DB error");
         }
-        return new User(
-            $row['userid'],
-            $row['name'],
-            $row['email'],
-            $row['phone']
-        );
-    } catch (PDOException $e) {
-        throw new DBException("DB error");
     }
-}
+    public function getusermail($email){
+        try {
+            $stmt = $this->db->prepare("SELECT * FROM users WHERE userid = :iduser");
+            $stmt->execute([':iduser' => $email]);
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$row) {
+                throw new NotexistException("user with email $email not exist");
+            }
+            return new User(
+                $row['userid'],
+                $row['name'],
+                $row['email'],
+                $row['phone']
+            );
+        } catch (PDOException $e) {
+            throw new DBException("DB error");
+        }
+    }
 
     public function updateuser($userid,$name,$email,$phone){
         $stmt = $this->db->prepare("UPDATE users SET email = :email, name=:name,phone=:phone WHERE userid=:userid");

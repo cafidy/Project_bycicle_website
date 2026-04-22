@@ -17,12 +17,14 @@ require_once '../autoloader.php';
  */
 
 use Site\Model\UsersDB;
+include "../cookies.php";
 
 $users = new UsersDB();
 $message = "";
 $racinepath = '../';
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['create'])) {
     if ($users->createuser($_POST['name'],$_POST['email'],$_POST['phone'],$_POST['password'])) {
+        $_SESSION['user']=$users->getusermail($_POST['email']);
         include "account.php";
     } else {
         $message = "Error: Email already used";

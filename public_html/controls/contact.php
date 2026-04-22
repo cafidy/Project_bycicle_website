@@ -1,4 +1,6 @@
 <?php
+    include "../cookies.php";
+
     //remplissage et envoie d'un message vers l'administrateur 
     $racinepath='../';
     $contactemail="user@gmail.com";

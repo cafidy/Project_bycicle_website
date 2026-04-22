@@ -22,6 +22,7 @@ use Site\Model\UsersDB;
 use Site\Model\OrderDB;
 use Site\Entity\User;
 use Site\Entity\Order;
+include "../cookies.php";
 
 $racinepath='../';
 
