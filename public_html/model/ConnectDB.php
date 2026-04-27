@@ -2,20 +2,15 @@
 namespace Site\Model;
 
 /**
- * model repository
+ * Classe de connexion à la base de données.
  *
- * this class stocks the value needed to connect to the database
- * and also connect to it 
- * 
- * Responsibilities:
- * - stock values
- * - connect to the db
- * 
- * Dependencies:
- * - PDO
+ * Initialise et expose la connexion PDO PostgreSQL.
+ * Étendue par tous les modèles du projet.
  *
- * @package Site\Model
- * @author yassine elmsebli
+ * @package  Site\Model
+ * @author   Yassine Elmsebli
+ *
+ * @property PDO $con  Instance de connexion PDO
  */
 
 use PDO;

@@ -1,7 +1,15 @@
 <?php
 namespace Site\Model;
 
-interface IDB {
+/**
+ * Interface de la classe DB.
+ *
+ * @package  Site\Model
+ * @author   Yassine Elmsebli
+ */
+interface IDB
+{
+    /** @inheritDoc */
     public function __construct();
 }
 ?>

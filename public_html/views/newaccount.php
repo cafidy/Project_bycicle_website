@@ -6,7 +6,8 @@
                     <h4>Créer un compte</h4>
                 </div>
                 <div class="card-body">
-                    <form action="newaccount" method="POST">
+                    <form method="POST">
+                        <input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
                         <div class="mb-3">
                             <label class="form-label">Email</label>
                             <input type="email" class="form-control" name="email" placeholder="example@gmail.com" required>

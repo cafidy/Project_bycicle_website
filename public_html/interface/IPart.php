@@ -1,7 +1,15 @@
 <?php
 namespace Site\Entity;
 
-interface IPart {
+/**
+ * Interface de la classe Part.
+ *
+ * @package  Site\Entity
+ * @author   Yassine Elmsebli
+ */
+interface IPart
+{
+    /** @inheritDoc */
     public function __construct($id, $name, $price, $stock, $desc, $img);
 }
 ?>

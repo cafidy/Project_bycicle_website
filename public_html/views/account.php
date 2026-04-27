@@ -16,7 +16,8 @@
 				</div>
 			</div>
 		</div>
-			<form action="account" method="POST">
+			<form method="POST">
+				<input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
 				<input name="userid" type="hidden" value="<?= $_SESSION["user"]->userid ?>">
 				<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
 				<div class="card h-100">
@@ -76,7 +77,7 @@
 						?>
 							<div class="row align-items-center mb-3">
 								<div class="col-md-2 text-center">
-									<img src="<?= $racinepath ?>assets/<?= $part->img ?>" 
+									<img src="assets/<?= $part->img ?>" 
 										class="img-fluid rounded" 
 										style="max-height:80px;">
 								</div>

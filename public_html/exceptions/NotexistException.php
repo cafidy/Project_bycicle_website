@@ -1,26 +1,19 @@
 <?php
-
-/**
- * exceptions repository
- *
- * This class is an exception that take care of errors related 
- * to elements not existing in the datavase
- * 
- * Responsibilities:
- * - throw when trying to fecth something that dosnt exist
- * Dependencies:
- *
- * @package Site\Cacthers
- * @author yassine elmsebli
- */
-
 namespace Site\Catchers;
 
-class NotexistException extends \Exception{
-    public function __construct($message){
-        parent::__construct($message,10);
+/**
+ * Exception pour les éléments introuvables en base de données.
+ *
+ * @package  Site\Catchers
+ * @author   Yassine Elmsebli
+ */
+class NotexistException extends \Exception
+{
+    /** @inheritDoc */
+    public function __construct($message)
+    {
+        parent::__construct($message, 10);
     }
 }
-
 ?>
 

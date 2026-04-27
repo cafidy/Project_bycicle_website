@@ -4,6 +4,7 @@
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="card h-100 shadow-sm border-0">
                     <form action="item" method="POST">
+                        <input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
                         <input type="hidden" name="partid" value="<?= $part->partid ?>">
                         <button name="item" class="border-0 bg-transparent w-100">
                             <img src="assets/<?=$part->img ?>" 
@@ -21,7 +22,8 @@
                         </p>
                     </div>
                     <div class="card-footer bg-white border-0 text-center pb-3">
-                        <form action="shop" method="POST">
+                        <form method="POST">
+                            <input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
                             <input type="hidden" name="partid" value="<?= $part->partid ?>">
 
                             <button class="btn btn-primary w-75" name="addcart">

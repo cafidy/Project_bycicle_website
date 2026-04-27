@@ -1,11 +1,18 @@
 <?php
-
 namespace Site\Catchers;
 
-class ValidationException extends \Exception{
-    public function __construct($message){
-        parent::__construct($message,11);
+/**
+ * Exception pour les erreurs de validation.
+ *
+ * @package  Site\Catchers
+ * @author   Yassine Elmsebli
+ */
+class ValidationException extends \Exception
+{
+    /** @inheritDoc */
+    public function __construct($message)
+    {
+        parent::__construct($message, 11);
     }
 }
-
 ?>

@@ -7,6 +7,7 @@
                 </div>
                 <div class="card-body">
                     <form action="login" method="POST">
+                        <input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
                         <div class="mb-3">
                             <label class="form-label">Email</label>
                             <input type="email" class="form-control" name="email" placeholder="user@gmail.com" required>

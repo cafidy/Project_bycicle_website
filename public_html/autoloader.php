@@ -19,4 +19,7 @@ spl_autoload_register(function ($classname) {
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+if (empty($_SESSION['csrftoken'])) {
+    $_SESSION['csrftoken'] = bin2hex(random_bytes(32));
+}
 ?>

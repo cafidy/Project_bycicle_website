@@ -1,5 +1,6 @@
 <div class="container my-5">
     <h2 class="mb-4 text-center">🛒 My Basket</h2>
+    <h4 class="mb-5 text-center"><?= $message ?></h4>
     <?php if(isset($_SESSION['user'])): 
         foreach($orders->getacorder() as $order):
         $part = $order->part;
@@ -7,7 +8,7 @@
         <div class="card mb-4 shadow-sm">
             <div class="row g-0 align-items-center">
                 <div class="col-md-3 text-center p-3">
-                    <img src="<?= $racinepath ?>assets/<?= $part->img ?>" 
+                    <img src="assets/<?= $part->img ?>" 
                          class="img-fluid rounded" 
                          style="max-height:150px; object-fit:cover;">
                 </div>
@@ -17,7 +18,8 @@
                     <h6 class="text-success fw-bold"><?= $part->price ?> €</h6>
                 </div>
                 <div class="col-md-3 text-center p-3">
-                    <form action="basket" method="POST">
+                    <form method="POST">
+                        <input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
                         <input type="hidden" name="odrpart" value="<?= $order->id ?>">
                         <button class="btn btn-outline-danger w-100" name="takeoff">
                             <i class="fa-solid fa-trash me-2"></i> Remove
@@ -28,14 +30,14 @@
         </div>
     <?php endforeach; ?>
     <?php elseif(!empty($parts)): ?>
-
-        <?php foreach($parts as $part): ?>
+        <h5 class="mb-5 text-danger text-center"> Login is needed to corder any parts of our site </h5>
+        <?php foreach($parts as $index => $part): ?>
 
         <div class="card mb-4 shadow-sm">
             <div class="row g-0 align-items-center">
 
                 <div class="col-md-3 p-3 text-center">
-                    <img src="<?= $racinepath ?>assets/<?= $part->img ?>" class="img-fluid rounded">
+                    <img src="assets/<?= $part->img ?>" class="img-fluid rounded">
                 </div>
 
                 <div class="col-md-6 p-3">
@@ -46,8 +48,9 @@
 
                 <div class="col-md-3 p-3">
                     <form method="POST">
-                        <input type="hidden" name="partid" value="<?= $part->partid ?>">
-                        <button class="btn btn-danger w-100" name="remove_cookie">Remove</button>
+                        <input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
+                        <input type="hidden" name="index" value="<?= $index ?>">
+                        <button class="btn btn-danger w-100" name="takeoff">Remove</button>
                     </form>
                 </div>
 
@@ -63,6 +66,7 @@
     <?php endif; ?>
     <?php if(isset($_SESSION['user']) && !empty($orders->getacorder())): ?>
         <form action="basket" method="POST">
+            <input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
             <input type="hidden" name="orderid" value="<?= $orders->getacorder()[0]->orderid ?>">
             <button class="btn btn-primary w-75" name="orderpart">
                 <i class="fa fa-shopping-cart me-2"></i> BUY

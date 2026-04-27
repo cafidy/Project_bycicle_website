@@ -1,18 +1,16 @@
 <?php
 namespace Site\Model;
+
 /**
- * model repository
+ * Classe de base pour tous les modèles.
  *
- * this class stocks the connection itself
- * 
- * Responsibilities:
- * - stock connection
- * 
- * Dependencies:
- * - ConnectDB
+ * Récupère et expose la connexion PDO via ConnectDB.
+ * Étendue par tous les modèles du projet.
  *
- * @package Site\Model
- * @author yassine elmsebli
+ * @package  Site\Model
+ * @author   Yassine Elmsebli
+ *
+ * @property PDO $db  Instance de connexion PDO
  */
 
 class DB {

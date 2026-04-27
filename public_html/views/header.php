@@ -14,6 +14,7 @@
           <h1><i>Peloton leader</i></h1>
           <?php if(isset($_SESSION['user'])): ?>
            <form method="POST" action="login">
+            <input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
               <button class="btn btn-danger m-4" type="submit" name="disconect" action="login">disconnect</button>
           </form>
           <?php endif; ?>

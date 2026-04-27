@@ -11,9 +11,9 @@
                     <p class="mb-1"><strong>Prix :</strong> <?= $part->price ?> €</p>
                     <p class="mb-3"><strong>Stock :</strong> <?= $part->stock ?> unités</p>
                     <div class="d-grid">
-                        <form action="item" method="POST">
+                        <form method="POST">
+                            <input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
                             <input type="hidden" name="partiditem" value="<?= $part->partid ?>">
-
                             <button class="btn btn-primary w-75" name="addcart">
                                 <i class="fa fa-shopping-cart me-2"></i> Add to Cart
                             </button>

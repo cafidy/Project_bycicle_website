@@ -1,12 +1,25 @@
 <?php
 namespace Site\Entity;
 
-interface IOrder {
+/**
+ * Interface de la classe Order.
+ *
+ * @package  Site\Entity
+ * @author   Yassine Elmsebli
+ */
+interface IOrder
+{
+    /** @inheritDoc */
     public function __construct(User $user, array $acorder, array $prorder);
-    public function getUser();
-    public function getAcorder();
-    public function getProrder();
-    public function setAcorder(array $acorder);
-    public function setProrder(array $prorder);
+    /** @inheritDoc */
+    public function getUser(): User;
+    /** @inheritDoc */
+    public function getAcorder(): array;
+    /** @inheritDoc */
+    public function getProrder(): array;
+    /** @inheritDoc */
+    public function setAcorder(array $acorder): void;
+    /** @inheritDoc */
+    public function setProrder(array $prorder): void;
 }
 ?>
