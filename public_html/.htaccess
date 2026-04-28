@@ -2,11 +2,4 @@ RewriteEngine On
 RewriteBase /~uapv2401709/
 
 RewriteRule ^firstpage$ index.php [L]
-RewriteRule ^account$ controls/account.php [L]
-RewriteRule ^mention$ controls/mention.php [L]
-RewriteRule ^basket$ controls/basket.php [L]
-RewriteRule ^contact$ controls/contact.php [L]
-RewriteRule ^item$ controls/item.php [L]
-RewriteRule ^login$ controls/login.php [L]
-RewriteRule ^newaccount$ controls/newaccount.php [L]
-RewriteRule ^shop$ controls/shop.php [L]
+RewriteRule ^([a-z]+)$ controls/$1.php

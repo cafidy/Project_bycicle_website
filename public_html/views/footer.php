@@ -40,12 +40,13 @@
     <div class="row">
 
       <div class="col-md-6 text-center text-md-start">
-        <h5 class="mb-2">test</h5>
+        <h5 class="mb-2">Peleton Leader</h5>
         <p class="mb-0">𐔌՞. .՞𐦯</p>
       </div>
       <div class="col-md-6 text-center">
         <a href="firstpage" class="btn btn-dark text-light text-decoration-none me-3">Home</a>
-        <a href="mention" class="btn btn-dark text-light text-decoration-none me-3">Mention legal</a>
+        <a href="mention" class="btn btn-dark text-light text-decoration-none me-3">Legals</a>
+        <a href="sitemaph" class="btn btn-dark text-light text-decoration-none me-3">Sitemap</a>
         <?php if (isset($_SESSION['user'])):?>
             <a href="account" class="btn btn-dark text-light text-decoration-none me-3">Account</a>
             <a href="contact" class="btn btn-dark text-light text-decoration-none">Contact</a>

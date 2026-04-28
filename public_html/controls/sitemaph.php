@@ -1,6 +1,6 @@
 <?php
 
-    $racinepath = '../';
+    $racinepath = "../";
     include($racinepath . "cookies.php");
 
     /**

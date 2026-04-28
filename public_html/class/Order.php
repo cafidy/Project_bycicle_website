@@ -37,7 +37,7 @@ class Order implements IOrder{
 
     // — Getters ------------------------------------------------
 
-    public function getUser() {
+    public function getuser() {
         return $this->user;
     }
 

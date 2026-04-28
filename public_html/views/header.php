@@ -11,26 +11,27 @@
         <a href="firstpage" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
         
-          <h1><i>Peloton leader</i></h1>
+          <h1 class="me-5"><i>Peloton leader</i></h1>
+          <h5><i>The leading retailer of bicycle parts</i></h5>
           <?php if(isset($_SESSION['user'])): ?>
            <form method="POST" action="login">
             <input name="csrftoken" type="hidden" value="<?= $_SESSION["csrftoken"]?>">
-              <button class="btn btn-danger m-4" type="submit" name="disconect" action="login">disconnect</button>
+              <button class="btn btn-danger m-4" type="submit" name="disconect" action="login">Logout</button>
           </form>
           <?php endif; ?>
           <?php if(!isset($_SESSION['user'])): ?>
-          <a href="login" class="btn btn-dark m-4">login</a>
+          <a href="login" class="btn btn-dark m-4"><i class="fa fa-arrow-right-to-bracket me-2"></i>Login</a>
           <?php endif; ?>
-          <h5> <i>Numero 1° des vendeur de pièces de vélo</i></h>
+          
         </a>
         
       </div>
       <div class="d-flex justify-content-between align-items-center w-100 px-3">
         <a href="shop" class="btn btn-dark text-light text-decoration-none">
-          Shop
+          <i class="fa fa-shop me-2"></i>Shop
         </a>
         <a href="basket" class="btn btn-dark text-light d-flex align-items-center">
-          <i class="fa fa-shopping-cart"></i>
+          <i class="fa fa-shopping-cart me-2"></i>Basket
         </a>
     </div>
     </div>

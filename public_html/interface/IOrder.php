@@ -12,14 +12,14 @@ interface IOrder
     /** @inheritDoc */
     public function __construct(User $user, array $acorder, array $prorder);
     /** @inheritDoc */
-    public function getUser(): User;
+    public function getuser();
     /** @inheritDoc */
-    public function getAcorder(): array;
+    public function getAcorder();
     /** @inheritDoc */
-    public function getProrder(): array;
+    public function getProrder();
     /** @inheritDoc */
-    public function setAcorder(array $acorder): void;
+    public function setAcorder(array $acorder);
     /** @inheritDoc */
-    public function setProrder(array $prorder): void;
+    public function setProrder(array $prorder);
 }
 ?>
